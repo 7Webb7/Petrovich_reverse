@@ -1,7 +1,7 @@
 import telebot
 import re
 
-token = '6887840596:AAHkWH-WEWgXwIax5mrO5qzzzH3tgLegiEY'
+token = ''
 bot = telebot.TeleBot(token)
 
 pattern = re.compile(r'\(\d+(?:\s*,\s*\d+)*\)+$')
