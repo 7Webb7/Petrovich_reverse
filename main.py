@@ -1,14 +1,14 @@
 import telebot
 import re
 
-token = ''
+token = '6887840596:AAHkWH-WEWgXwIax5mrO5qzzzH3tgLegiEY'
 bot = telebot.TeleBot(token)
 
-pattern = re.compile(r'\(\d+(?:\s*,\s*\d+)*\)$')
+pattern = re.compile(r'\(\d+(?:\s*,\s*\d+)*\)+$')
 
 @bot.message_handler(commands = ['start'])
 def handle_start(message):
-    bot.reply_to(message, "Приветствую, меня зовут Петрович. Текст перевернуть?")
+    bot.send_message(message.chat.id, "Приветствую, меня зовут Петрович. Текст перевернуть?")
 @bot.message_handler(content_types= 'text')
 def handle_reverse(message):
     match = pattern.search(message.text)
